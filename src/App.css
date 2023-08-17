@@ -1,0 +1,115 @@
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #393939;
+  width: 17px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00bd9a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #006754;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.logo {
+  max-width: 80px;
+}
+
+.navbar {
+  background-color: transparent;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+@media (max-width: 1000px) {
+  .navbar {
+    background-color: black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: none !important;
+  border: 2px solid #00bd9a;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.connected-wallet {
+  color: white;
+  font-size: medium;
+}
+
+.staking-modal-wrapper {
+  justify-content: center;
+  display: flex;
+  padding-top: 5%;
+}
+
+.staking-modal {
+  height: 70vh;
+  width: 40vw;
+  background-color: #282c34;
+  border-radius: 2%;
+  padding: 20px;
+}
+
+@media (max-width: 1000px) {
+  .staking-modal {
+    height: 60vh;
+    width: 90vw;
+    background-color: #282c34;
+    border-radius: 5%;
+    padding: 20px;
+  }
+}
+
+.staking-title {
+  color: white;
+  font-size: 40px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+.staked-items-list {
+  flex-direction: row;
+}
+.stake-item-token-id {
+  color: white;
+}
+.stake-item-rarity {
+  color: #61dafb;
+}

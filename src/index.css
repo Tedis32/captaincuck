@@ -1,0 +1,89 @@
+@import url("https://fonts.cdnfonts.com/css/seven-segment");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./assets/fonts/Coolvetica.otf");
+}
+
+@font-face {
+  font-family: "Jumper";
+  src: url("./assets/fonts/Jumper.ttf");
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
+}
+
+@font-face {
+  font-family: "Foobar Pro";
+  src: url("./assets/fonts/Foobar.otf");
+}
+
+@font-face {
+  font-family: "SourceSans";
+  src: url("./assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SourceSansSemi";
+  src: url("./assets/fonts/SourceSansPro-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Bivoac";
+  src: url("./assets/fonts/Bivoac.otf");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("./assets/fonts/OpenSans.ttf");
+}
+
+@font-face {
+  font-family: "RobotoLight";
+  src: url("./assets/fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("./assets/fonts/RobotoCondensed.ttf");
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 17px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background: #e6e6e6;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 6px;
+  border: 3px solid #e6e6e6;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #afafaf;
+  padding-top: 25px;
+}
+
+.collapsable.show {
+  height: 500px;
+}
+
+.collapsable {
+  height: 90px;
+}

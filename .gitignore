@@ -1,0 +1,5 @@
+.storybook
+dist
+.env.*
+node_modules
+*.mjs
