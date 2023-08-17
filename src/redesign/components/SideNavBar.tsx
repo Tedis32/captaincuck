@@ -50,8 +50,10 @@ export default function SidebarNav() {
   return (
     <div className="z-40">
       <nav
-        className={`${expandedClass} ${navbarAnimationDuration} ${maxNavWidth} z-[2] overflow-hidden transition-width h-full fixed flex flex-col justify-evenly bg-darkerGray text-center border-r-2 border-mediumGray`}
+        className={`${expandedClass} ${navbarAnimationDuration} ${maxNavWidth} z-[2] overflow-hidden transition-width h-full fixed flex flex-col justify-between bg-darkerGray text-center border-r-2 border-mediumGray`}
       >
+        <br />
+
         <img src={NovabloxLogo} className="object-cover w-18 h-18 " />
         <div
           className="flex flex-row w-full items-center cursor-pointer relative"
@@ -80,6 +82,7 @@ export default function SidebarNav() {
             </div>
           </div>
         </div>
+        
         <div className="flex flex-col space-y-8 z-[2]">
           <NavItem
             label="Home"
@@ -115,6 +118,10 @@ export default function SidebarNav() {
             to="https://t.co/FsWvzIkJZ0"
           ></NavItem>
         </div>
+        <br />
+        <br />
+        <br />
+
         {/* 
         <div className="">
           <NavItem

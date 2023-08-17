@@ -60,7 +60,7 @@ const Home = () => {
                 aria-hidden="true" />
               Cuck is giving this valuable scallywag away at Twitter port
             </p>
-            <img src="/src/assets/images/punk2023.jpg" className="w-20 h22"/>
+            <img src="images/punk2023.jpg" className="w-20 h22"/>
             
             <a
               target="_target"

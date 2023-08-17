@@ -33,7 +33,7 @@ export default function NavItem(props: NavItemProps) {
     >
       <div
         onClickCapture={handleClickEvent}
-        className={`ml-[10%] relative flex bg-darkerGray h-8 lg:h-12 items-center border-2 border-${
+        className={`ml-[10%] relative flex bg-darkerGray h-12 lg:h-12 items-center border-2 border-${
           active ? "mediumGray" : "darkerGray"
         } text-mediumGray rounded-lg transition-all ${animationDuration} ${
           props.isExpanded ? "w-[80%]" : "w-12"
