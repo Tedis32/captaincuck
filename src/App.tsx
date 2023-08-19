@@ -36,82 +36,82 @@ function App() {
     }, [pathname]);
   }
 
-  async function listenForNetwork() {
-    const targetNetworkId = import.meta.env.VITE_DEFAULT_NETWORK_ID;
-    try {
-      // Try to switch network
-      console.log("Switching to network:", targetNetworkId);
-      // await ethereum.request({
-      //   method: "wallet_switchEthereumChain",
-      //   params: [{ chainId: targetNetworkId }],
-      // });
-      // setNetworkId(parseInt(targetNetworkId));
-    } catch (error: any) {
-      // This error code means that the chain we want has not been added to MetaMask
-      // In this case we ask the user to add it to their MetaMask
-      if (error.code === 4902) {
-        await ethereum.request({
-          method: "wallet_addEthereumChain",
-          // params: [
-          //   {
-          //     chainId: "0xFA",
-          //     rpcUrls: ["https://rpc.ankr.com/fantom/"],
-          //     chainName: "Fantom Opera",
-          //     nativeCurrency: {
-          //       name: "Fantom",
-          //       symbol: "FTM",
-          //       decimals: 18,
-          //     },
-          //     blockExplorerUrls: ["https://ftmscan.com/"],
-          //   },
-          // ],
-          params: [
-            {
-              chainId: "0x539",
-              rpcUrls: ["http://127.0.0.1:7545"],
-              chainName: "Localhost",
-              nativeCurrency: {
-                name: "ETH",
-                symbol: "Eth",
-                decimals: 18,
-              },
-              blockExplorerUrls: ["https://ftmscan.com/"],
-            },
-          ],
-        });
+  // async function listenForNetwork() {
+  //   const targetNetworkId = import.meta.env.VITE_DEFAULT_NETWORK_ID;
+  //   try {
+  //     // Try to switch network
+  //     console.log("Switching to network:", targetNetworkId);
+  //     // await ethereum.request({
+  //     //   method: "wallet_switchEthereumChain",
+  //     //   params: [{ chainId: targetNetworkId }],
+  //     // });
+  //     // setNetworkId(parseInt(targetNetworkId));
+  //   } catch (error: any) {
+  //     // This error code means that the chain we want has not been added to MetaMask
+  //     // In this case we ask the user to add it to their MetaMask
+  //     if (error.code === 4902) {
+  //       await ethereum.request({
+  //         method: "wallet_addEthereumChain",
+  //         // params: [
+  //         //   {
+  //         //     chainId: "0xFA",
+  //         //     rpcUrls: ["https://rpc.ankr.com/fantom/"],
+  //         //     chainName: "Fantom Opera",
+  //         //     nativeCurrency: {
+  //         //       name: "Fantom",
+  //         //       symbol: "FTM",
+  //         //       decimals: 18,
+  //         //     },
+  //         //     blockExplorerUrls: ["https://ftmscan.com/"],
+  //         //   },
+  //         // ],
+  //         params: [
+  //           {
+  //             chainId: "0x539",
+  //             rpcUrls: ["http://127.0.0.1:7545"],
+  //             chainName: "Localhost",
+  //             nativeCurrency: {
+  //               name: "ETH",
+  //               symbol: "Eth",
+  //               decimals: 18,
+  //             },
+  //             blockExplorerUrls: ["https://ftmscan.com/"],
+  //           },
+  //         ],
+  //       });
 
-        // FIXME
-        setNetworkId(1337);
-      }
-    }
-  }
+  //       // FIXME
+  //       setNetworkId(1337);
+  //     }
+  //   }
+  // }
 
-  async function setupApplication() {
-    let provider = await detectEthereumProvider();
+  // async function setupApplication() {
+  //   let provider = await detectEthereumProvider();
 
-    if (!provider) {
-      toast.error("Could not detect Provider, do you have MetaMask installed?");
-      return;
-    }
+  //   if (!provider) {
+  //     toast.error("Could not detect Provider, do you have MetaMask installed?");
+  //     return;
+  //   }
 
-    await listenForNetwork();
-    listenConnectionChange();
+  //   await listenForNetwork();
+  //   listenConnectionChange();
 
-    detectedProvider = provider;
-  }
+  //   detectedProvider = provider;
+  // }
 
   useScrollToTop();
 
-  async function listenConnectionChange() {
-    ethereum.on("chainChanged", (networkId: number) => {
-      setNetworkId(networkId);
-      window.location.reload();
-    });
-  }
+  // async function listenConnectionChange() {
+  //   ethereum.on("chainChanged", (networkId: number) => {
+  //     setNetworkId(networkId);
+  //     window.location.reload();
+  //   });
+  // }
 
-  useEffect(() => {
-    setupApplication();
-  }, []);
+  // useEffect(() => {
+  //   setupApplication();
+  // }, []);
 
   return (
     <div className="flex flex-col h-screen">
