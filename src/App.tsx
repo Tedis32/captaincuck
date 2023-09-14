@@ -15,6 +15,8 @@ import "@fontsource/public-sans";
 import SidebarNav from "./redesign/components/SideNavBar";
 import Loader from "./components/Loader";
 import Footer from "./components/Footer";
+import RecentNftCard from "./components/prediction/RecentNftCard";
+import PredictionPage from "./pages/PredictionPage";
 let detectedProvider: any;
 
 function App() {
@@ -133,6 +135,7 @@ function App() {
       <div className="flex flex-col min-h-screen ml-16">
         <Routes>
           <Route path="/home" element={<Home />} />
+          <Route path="/test" element={<PredictionPage />} />
           <Route path="/404" element={<My404 />} />
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="*" element={<Navigate to="/404" replace />} />

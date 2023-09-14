@@ -28,6 +28,7 @@ module.exports = {
         robotoLight: ["RobotoLight", "sans-serif"],
         robotoReg: ["RobotoRegular", "sans-serif"],
         robotoCond: ["RobotoCondensed", "sans-serif"],
+        baloo: ["Baloo", "sans-serif"],
       },
       colors: {
         background: "#171714",
@@ -41,6 +42,7 @@ module.exports = {
         darkGray: "#1E1E1E",
         darkerGray: "#171714",
         offWhite: "#C7C7C7",
+        gunxPink: "#A80D68",
       },
       transitionProperty: {
         height: "height",
