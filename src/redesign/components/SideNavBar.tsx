@@ -115,7 +115,7 @@ export default function SidebarNav() {
             inNewTab={true}
             isExpanded={isExpanded}
             icon={faMedium}
-            to="https://t.co/FsWvzIkJZ0"
+            to="https://medium.com/@capncuckai/the-legend-of-captain-cuck-a79ff1f86845"
           ></NavItem>
         </div>
         <br />

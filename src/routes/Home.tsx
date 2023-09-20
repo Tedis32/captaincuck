@@ -51,19 +51,16 @@ const Home = () => {
         <div className="sticky isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 bg-[url('/src/assets/images/water.jpg')] w-full">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p className="text-sm leading-6 text-gray-900	font-sourceSansSemi text-lg	">
-              <strong className="text-2xl	font-sourceSansSemi text-[800]">
-                NFT GIVEAWAY
-              </strong>
               <svg
                 viewBox="0 0 2 2"
                 className="mx-2 inline h-0.5 w-0.5 fill-current"
                 aria-hidden="true" />
-              Win a mermaid gf NFT over on X/Twitter:
+              $SEAGEN IS LIVE ON UNISWAP
             </p>
-            <img src="images/mermaidgf.jpg" className="w-24 h30"/>
+            <img src="images/1.png" className="w-24 h30"/>
             <a
               target="_target"
-              href="https://twitter.com/captaincucketh/status/1692474024369025311?s=20"
+              href="https://www.dextools.io/app/en/ether/pair-explorer/0xdc1689260c8e1d514be9db82b7e16633e47c55c2"
               className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 font-jumper"
             >
               HOP ABOARD<span aria-hidden="true">&rarr;</span>
