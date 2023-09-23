@@ -43,6 +43,8 @@ module.exports = {
         darkerGray: "#171714",
         offWhite: "#C7C7C7",
         gunxPink: "#A80D68",
+        seaBlue: "#0D68A8",
+        priceGreen: "#68A80D",
       },
       transitionProperty: {
         height: "height",

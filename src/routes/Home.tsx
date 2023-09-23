@@ -55,11 +55,7 @@ const Home = () => {
                 viewBox="0 0 2 2"
                 className="mx-2 inline h-0.5 w-0.5 fill-current"
                 aria-hidden="true" />
-<<<<<<< HEAD
               $SEAGEN LIVE ON UNISWAP
-=======
-              $SEAGEN IS LIVE ON UNISWAP
->>>>>>> main
             </p>
             <img src="images/1.png" className="w-24 h30"/>
             <a

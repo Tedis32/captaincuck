@@ -30,11 +30,29 @@ export default function () {
   }
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-row">
-        <RecentNftCard />
-        <RecentNftCard />
-        <RecentNftCard />
+    <div className="flex flex-col w-[98%] p-4">
+      {/* TOP SECTION */}
+      <div className="border-bottom font-robotoLight flex flex-col">
+        <span className="">
+          <h1>Welcome to SeaFarer</h1>
+          <span className="flex flex-col lg:flex-row justify-between">
+            <p className="font-robotoLight text-[14px] lg:text-[19px]">
+              Click on any of the below NFT collections to make a prediction
+            </p>
+            <span className="flex-row flex gap-1">
+              <p className="font-robotoLight text-[16px] text-offWhite">
+                Credits Remaining:
+              </p>
+              <p className="text-[16px] text-seaBlue font-semibold">400,000</p>
+            </span>
+          </span>
+        </span>
+      </div>
+
+      <div className="flex grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid gap-3 border-bottom">
+        <RecentNftCard NFTNumber={1} />
+        <RecentNftCard NFTNumber={2} />
+        <RecentNftCard NFTNumber={3} />
       </div>
       <div>
         <h1>Predict</h1>
