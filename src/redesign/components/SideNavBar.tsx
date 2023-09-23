@@ -1,4 +1,4 @@
-import NovabloxLogo from "/src/assets/images/newlogo.png";
+import NovabloxLogo from "/src/assets/images/logo.png";
 
 import {
   faHouse,
@@ -90,12 +90,12 @@ export default function SidebarNav() {
             icon={faHouse}
             to="/home"
           ></NavItem>
-          <NavItem
+          {/* <NavItem
             label="Contract"
             isExpanded={isExpanded}
             icon={faMoneyBill1Wave}
             onClick={()=> alert('AARRR Shes Deploying on the 21/08/2023')}
-          ></NavItem>
+          ></NavItem> */}
           <NavItem
             label="Telegram"
             inNewTab={true}

@@ -51,14 +51,15 @@ const Home = () => {
         <div className="sticky isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 bg-[url('/src/assets/images/water.jpg')] w-full">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <p className="text-sm leading-6 text-gray-900	font-sourceSansSemi text-lg	">
-              <strong className="text-2xl	font-sourceSansSemi text-[800]">
-                NFT GIVEAWAY
-              </strong>
               <svg
                 viewBox="0 0 2 2"
                 className="mx-2 inline h-0.5 w-0.5 fill-current"
                 aria-hidden="true" />
+<<<<<<< HEAD
               $SEAGEN LIVE ON UNISWAP
+=======
+              $SEAGEN IS LIVE ON UNISWAP
+>>>>>>> main
             </p>
             <img src="images/1.png" className="w-24 h30"/>
             <a
