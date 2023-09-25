@@ -1,4 +1,5 @@
 import RecentNftCard from "../components/prediction/RecentNftCard";
+import Collapsible from "react-collapsible";
 
 export default function () {
   function handleSubmit(e: any) {
@@ -48,12 +49,12 @@ export default function () {
           </span>
         </span>
       </div>
-
-      <div className="flex grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid gap-3 border-bottom">
-        <RecentNftCard NFTNumber={1} />
-        <RecentNftCard NFTNumber={2} />
-        <RecentNftCard NFTNumber={3} />
-      </div>
+      <Collapsible trigger="Start here" />
+        <div className="flex grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid gap-3 border-bottom">
+          <RecentNftCard NFTNumber={1} />
+          <RecentNftCard NFTNumber={2} />
+          <RecentNftCard NFTNumber={3} />
+        </div>
       <div>
         <h1>Predict</h1>
         <form method="post" onSubmit={handleSubmit}>

@@ -11,22 +11,20 @@ const RecentNftCard = ({ NFTNumber }: RecentNftCardProps) => {
       <span className="font-bold font-baloo text-[60px] text-gray ml-2">
         #{NFTNumber}
       </span>
-      <div id="border" className="bg-gray p-2 mt-[-32px] rounded-md min-h-max">
+      <div id="border" className="bg-gray p-2 mt-[-26px] rounded-md">
         <div
           id="container"
           className="bg-background p-1 rounded-md flex-col flex"
         >
-          <h1 className="text-seaBlue text-[28px] font-coolvetica flex-wrap flex">
+          <h1 className="text-seaBlue text-[22px] font-coolvetica flex-wrap flex">
             BoredApeYachtClub
           </h1>
           <h3 className="font-coolvetica">BAYC</h3>
           <div className="flex flex-col">
-            <div>
-              <img
-                src={BAYCImage}
-                className="object-cover h-60 w-80 self-center"
-              />
-            </div>
+            <img
+              src={BAYCImage}
+              className="object-cover h-40 w-40 self-center"
+            />
             <span className="flex flex-col">
               <span className="flex flex-row gap-2">
                 <p className="text-[18px] font-openSans ">
