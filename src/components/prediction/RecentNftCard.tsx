@@ -2,51 +2,39 @@ import BAYCImage from "../../assets/images/BORED-APE.jpg";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TrendingNFTData } from "../../pages/types";
+
 type RecentNftCardProps = {
   nftData: TrendingNFTData;
 };
 
 const RecentNftCard = ({ nftData }: RecentNftCardProps) => {
   return (
-    <div className="relative mt-2 max-w-xs justify-center">
-      <span className="font-bold font-baloo text-[40px] text-gray ml-2">
+    <div className="relative mt-2 w-64">
+      <span className="absolute top-0 left-0 font-bold font-baloo text-[40px] text-gray ml-2">
         {nftData.rank}
       </span>
-      <div id="border" className="bg-gray p-2 mt-[-18px] rounded-md">
-        <div
-          id="container"
-          className="bg-background p-1 rounded-md flex-col flex"
-        >
-          <h1 className="text-seaBlue text-[22px] font-coolvetica flex-wrap flex">
-            BoredApeYachtClub
-          </h1>
-          <div className="flex flex-col">
-            <img
-              src={nftData.collection_image}
-              className="object-cover self-center border-radius-8"
-            />
-            <span className="flex flex-col">
-              <span className="flex flex-row gap-2">
-                <p className="text-[18px] font-openSans ">
-                  Last sold for: 12.4 ETH
-                </p>
-                <div className="flex flex-row justify-center pt-1.5">
-                  <FontAwesomeIcon
-                    size="sm"
-                    icon={faChevronUp}
-                    color="#68A80D"
-                  />
-                </div>
-              </span>
-              <span className="text-[11px] font-robotoLight">1 min ago</span>
+      <div className="bg-gray p-2 rounded-md h-full flex flex-col items-center">
+        <h1 className="text-seaBlue text-[22px] font-coolvetica mb-2">
+          BoredApeYachtClub
+        </h1>
+        <div className="flex flex-col items-center mb-2">
+          <img
+            src={nftData.collection_image}
+            className="rounded-full w-32 h-32"
+          />
+          <div className="flex flex-col items-center mt-2">
+            <span className="flex items-center gap-2 text-[18px] font-openSans ">
+              <p>Floor {nftData.floor_price_usd} USD</p>
+              <FontAwesomeIcon size="sm" icon={faChevronUp} color="#68A80D" />
             </span>
-            <span className="text-[12px] font-openSans flex flex-row gap-2">
-              <p>24 hour change</p>
-              <p className="text-openSans text-priceGreen text-md">+1.3%</p>
-            </span>
-            <button>Predict</button>
+            <span className="text-[11px] font-robotoLight mt-1">1 min ago</span>
           </div>
         </div>
+        <div className="text-[12px] font-openSans flex items-center gap-2 mb-2">
+          <p>24 hour change</p>
+          <p className="text-priceGreen text-md">+1.3%</p>
+        </div>
+        <button className="self-stretch">Predict</button>
       </div>
     </div>
   );

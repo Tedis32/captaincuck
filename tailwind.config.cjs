@@ -45,6 +45,7 @@ module.exports = {
         gunxPink: "#A80D68",
         seaBlue: "#0D68A8",
         priceGreen: "#68A80D",
+        priceRed: "#ed123e",
       },
       transitionProperty: {
         height: "height",

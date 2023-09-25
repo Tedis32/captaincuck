@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import RecentNftCard from "../components/prediction/RecentNftCard";
 import Collapsible from "react-collapsible";
 import { TrendingNFTData } from "./types";
-import { getHottestNFTsByVolume } from "../utils/moralisUtils";
+import { getHottestNFTsByVolume } from "../utils/nftUtils";
+import NFTListItem from "../components/prediction/NFTListItem";
 
 const PredictionPage = () => {
   const [trendingNfts, setTrendingNfts] = useState<Array<TrendingNFTData>>([]);
@@ -37,7 +38,7 @@ const PredictionPage = () => {
 
   const fetchTrending = async () => {
     let NFTs = await getHottestNFTsByVolume();
-    setTrendingNfts(NFTs && NFTs);
+    setTrendingNfts(NFTs);
   };
 
   const [trendingOpenByDefault, setTrendingOpenByDefault] = useState(true);
@@ -65,14 +66,12 @@ const PredictionPage = () => {
           </span>
         </span>
       </div>
-      <Collapsible trigger="Trending NFTs" open={trendingOpenByDefault}>
-        <div className="flex grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid gap-3 border-bottom">
+      <Collapsible trigger="Top NFTs All Time" open={trendingOpenByDefault}>
           {trendingNfts.map((data) => (
-            <RecentNftCard nftData={data} />
+            <NFTListItem nftData={data} />
           ))}
-        </div>
       </Collapsible>
-      <div>
+      {/* <div>
         <h1>Predict</h1>
         <form method="post" onSubmit={handleSubmit}>
           <label>
@@ -83,7 +82,7 @@ const PredictionPage = () => {
           </label>
           <button type="submit">Submit form</button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };
