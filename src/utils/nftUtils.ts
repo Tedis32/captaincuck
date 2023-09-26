@@ -1,25 +1,7 @@
 import globals from "../globals";
 import Moralis from "moralis";
 import { ethers } from "ethers";
-// export function getTopByVolume() {
-//   const url =
-//     "https://api.opensea.io/api/v1/assets?order_direction=desc&order_by=volume&offset=0&limit=10";
-
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch((error) =>
-//       console.error("Error fetching data from OpenSea API:", error)
-//     );
-//     const provider = new ethers.JsonRpcProvider(
-//       "https://mainnet.infura.io",
-//     );
-    
-//     const openseaSDK = new OpenSeaSDK(walletWithProvider, {
-//       chain: Chain.Mainnet,
-//       apiKey: YOUR_API_KEY,
-//     });
-// }
+import TwentyFourHourDataNFTScan from "../pages/DummyNFTScanData";
 
 export function getHottestNFTsByVolume() {
   return [
@@ -514,4 +496,8 @@ export function getHottestNFTsByVolume() {
       "average_price_usd": "527.5938331291667"
     }
   ];
+}
+
+export function getNFTScan24HourByVolumeNFTs () {
+  return TwentyFourHourDataNFTScan;
 }

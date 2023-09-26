@@ -50,6 +50,7 @@
     "recoil": "^0.7.6",
     "recoil-nexus": "^0.4.0",
     "recoil-persist": "^4.2.0",
+    "tw-elements": "^1.0.0",
     "web3": "^4.1.1"
   },
   "devDependencies": {
