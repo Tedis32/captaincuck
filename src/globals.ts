@@ -7,6 +7,8 @@ const globals = {
   ANKR_API_KEY: import.meta.env.VITE_ANKR_API_KEY,
 
   NOVABLOX_API_ROOT: import.meta.env.VITE_NOVABLOX_API_ROOT,
+  MORALIS_API_KEY: import.meta.env.VITE_MORALIS_API_KEY,
+  INFURA_API_KEY: import.meta.env.VITE_INFURA_KEY,
 
   ENVIRONMENT: import.meta.env.MODE,
 };
