@@ -5,6 +5,7 @@ import {
   faChevronCircleDown,
   faClipboard,
 } from "@fortawesome/free-solid-svg-icons";
+import PredictionComponent from "./PredictionComponent";
 
 type NFTDataPredictionModalProps = {
   data: NFTScanNFTData;
@@ -15,7 +16,26 @@ const NFTDataPredictionModal = ({
   data,
   onClose,
 }: NFTDataPredictionModalProps) => {
-  console.log("getting here");
+  const [predictionState, setPredictionState] = useState(0);
+
+  const getPredictionState = () => {
+    if (predictionState === 0) {
+      return (
+        <button
+          type="button"
+          className="ml-1 inline-block rounded bg-seaBlue px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+          onClick={() => setPredictionState(1)}
+        >
+          Predict Price
+        </button>
+      );
+    } else if (predictionState === 1) {
+      return <PredictionComponent contractAddress={data.contract_address} />;
+    }
+  };
+
   return (
     <div
       data-te-modal-init
@@ -24,7 +44,10 @@ const NFTDataPredictionModal = ({
       aria-labelledby="exampleModalCenteredScrollableLabel"
       aria-modal="true"
       role="dialog"
-      onClick={onClose}
+      onClick={() => {
+        setPredictionState(0);
+        onClose();
+      }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
@@ -44,7 +67,10 @@ const NFTDataPredictionModal = ({
               className="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
               data-te-modal-dismiss
               aria-label="Close"
-              onClick={() => onClose()}
+              onClick={() => {
+                setPredictionState(0);
+                onClose();
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +109,12 @@ const NFTDataPredictionModal = ({
             </p>
             <p className="text-white font-openSans">Contract Address</p>
             <div className="flex flex-row gap-2">
-              {data.contract_address}
-
+              {data.contract_address.substring(0, 4)}
+              ...
+              {data.contract_address.substring(
+                data.contract_address.length - 4,
+                data.contract_address.length
+              )}
               <div
                 onClick={() => {
                   navigator.clipboard.writeText(data.contract_address);
@@ -103,15 +133,7 @@ const NFTDataPredictionModal = ({
           </div>
 
           <div className="flex flex-shrink-0 flex-wrap items-center justify-center rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
-            <button
-              type="button"
-              className="ml-1 inline-block rounded bg-seaBlue px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-              onClick={() => console.log("making a prediction")}
-            >
-              Predict Price
-            </button>
+            {getPredictionState()}
           </div>
         </div>
       </div>
