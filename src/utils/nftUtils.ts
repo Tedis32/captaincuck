@@ -1,7 +1,7 @@
 import globals from "../globals";
 import Moralis from "moralis";
 import { ethers } from "ethers";
-import TwentyFourHourDataNFTScan from "../pages/DummyNFTScanData";
+import TwentyFourHourDataNFTScan, { HotNFtsNFTScan } from "../pages/DummyNFTScanData";
 
 export function getHottestNFTsByVolume() {
   return [
@@ -500,4 +500,7 @@ export function getHottestNFTsByVolume() {
 
 export function getNFTScan24HourByVolumeNFTs () {
   return TwentyFourHourDataNFTScan;
+}
+export function getTop4HottestNFTs () {
+  return HotNFtsNFTScan;
 }

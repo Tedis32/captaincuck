@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         fade: "fadeOut 2s ease-in-out",
         fade4: "fadeOut 4s ease-in-out",
+        wiggle: "wiggle 1s ease-in-out infinite",
       },
 
       // that is actual animation
@@ -57,4 +58,7 @@ module.exports = {
     },
   },
   plugins: [require("tw-elements/dist/plugin")],
+  corePlugins: {
+    backgroundOpacity: true,
+  },
 };

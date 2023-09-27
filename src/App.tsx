@@ -134,8 +134,8 @@ function App() {
 
       <div className="flex flex-col min-h-screen ml-16">
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/test" element={<PredictionPage />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/home" element={<PredictionPage />} />
           <Route path="/404" element={<My404 />} />
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="*" element={<Navigate to="/404" replace />} />

@@ -1,40 +1,58 @@
-import BAYCImage from "../../assets/images/BORED-APE.jpg";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { TrendingNFTData } from "../../pages/types";
+import { NFTScanNFTData } from "../../pages/types";
+import { NumericFormat } from "react-number-format";
+import { Link } from "react-router-dom";
 
 type RecentNftCardProps = {
-  nftData: TrendingNFTData;
+  nftData: NFTScanNFTData;
 };
 
 const RecentNftCard = ({ nftData }: RecentNftCardProps) => {
   return (
-    <div className="relative mt-2 w-64">
-      <span className="absolute top-0 left-0 font-bold font-baloo text-[40px] text-gray ml-2">
-        {nftData.rank}
-      </span>
-      <div className="bg-gray p-2 rounded-md h-full flex flex-col items-center">
-        <h1 className="text-seaBlue text-[22px] font-coolvetica mb-2">
-          BoredApeYachtClub
+    <div className="relative mt-2 w-64 hover:animate-[pulse_1s_ease-in-out_infinite] hover:-translate-y-1.5 border-[2px] border-seaBlue">
+      <div className="bg-black bg-opacity-25 p-2 rounded-md h-full flex flex-col items-center">
+        <h1 className="text-seaBlue text-[21px] font-coolvetica">
+          {nftData.name}
         </h1>
         <div className="flex flex-col items-center mb-2">
-          <img
-            src={nftData.collection_image}
-            className="rounded-full w-32 h-32"
-          />
+          <img src={nftData.logo_url} className="rounded-full w-32 h-32" />
           <div className="flex flex-col items-center mt-2">
             <span className="flex items-center gap-2 text-[18px] font-openSans ">
-              <p>Floor {nftData.floor_price_usd} USD</p>
-              <FontAwesomeIcon size="sm" icon={faChevronUp} color="#68A80D" />
+              <p>Floor {nftData.floor_price} ETH</p>
             </span>
-            <span className="text-[11px] font-robotoLight mt-1">1 min ago</span>
+            <Link
+              className="text-[11px] font-robotoLight mt-1"
+              to={"https://etherscan.io/address/" + nftData.contract_address}
+              target="#"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {nftData.contract_address.substring(0, 5)}...
+              {nftData.contract_address.substring(
+                nftData.contract_address.length - 4,
+                nftData.contract_address.length
+              )}
+            </Link>
           </div>
         </div>
-        <div className="text-[12px] font-openSans flex items-center gap-2 mb-2">
-          <p>24 hour change</p>
-          <p className="text-priceGreen text-md">+1.3%</p>
+        <div className="flex flex-row gap-2">
+          <p className="text-[12px] font-openSans items-center gap-2 mb-2">
+            24hr Volume USD
+          </p>
+          <NumericFormat
+            value={parseInt(nftData.volume_total as string).toFixed(2)}
+            displayType={"text"}
+            thousandSeparator={true}
+            prefix={"$"}
+            className="text-priceGreen text-[12px]"
+          />
         </div>
-        <button className="self-stretch">Predict</button>
+        <a
+          className="font-openSans py-2 px-4 rounded-l no-underline"
+          href={nftData.website ? nftData.website : "https://opensea.com"}
+          target="#"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Website
+        </a>
       </div>
     </div>
   );
