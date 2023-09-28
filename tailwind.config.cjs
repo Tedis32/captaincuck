@@ -33,6 +33,7 @@ module.exports = {
       },
       colors: {
         background: "#171714",
+        navbarNavy: "#0E0F17",
         lighterForeground: "#1e1e1e",
         highlight: "#27DEE8",
         darkHighlight: "#008188",

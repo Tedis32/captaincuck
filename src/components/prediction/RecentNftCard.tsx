@@ -1,16 +1,17 @@
+import { Collection } from "nftscan-api/dist/src/types/evm";
 import { NFTScanNFTData } from "../../pages/types";
 import { NumericFormat } from "react-number-format";
 import { Link } from "react-router-dom";
 
 type RecentNftCardProps = {
-  nftData: NFTScanNFTData;
+  nftData: Collection;
 };
 
 const RecentNftCard = ({ nftData }: RecentNftCardProps) => {
   return (
     <div className="relative mt-2 w-64 hover:animate-[pulse_1s_ease-in-out_infinite] hover:-translate-y-1.5 border-[2px] border-seaBlue">
       <div className="bg-black bg-opacity-25 p-2 rounded-md h-full flex flex-col items-center">
-        <h1 className="text-seaBlue text-[21px] font-coolvetica">
+        <h1 className="text-seaBlue text-[18px] font-coolvetica">
           {nftData.name}
         </h1>
         <div className="flex flex-col items-center mb-2">
@@ -34,16 +35,16 @@ const RecentNftCard = ({ nftData }: RecentNftCardProps) => {
           </div>
         </div>
         <div className="flex flex-row gap-2">
-          <p className="text-[12px] font-openSans items-center gap-2 mb-2">
-            24hr Volume USD
+          <p className="text-priceGreen text-[12px] font-openSans items-center gap-2 mb-2">
+            Floor price: {nftData.floor_price}
           </p>
-          <NumericFormat
-            value={parseInt(nftData.volume_total as string).toFixed(2)}
+          {/* <NumericFormat
+            value={parseInt(nftData.sales_total as string).toFixed(2)}
             displayType={"text"}
             thousandSeparator={true}
             prefix={"$"}
             className="text-priceGreen text-[12px]"
-          />
+          /> */}
         </div>
         <a
           className="font-openSans py-2 px-4 rounded-l no-underline"

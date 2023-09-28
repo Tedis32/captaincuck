@@ -9,6 +9,8 @@ const globals = {
   NOVABLOX_API_ROOT: import.meta.env.VITE_NOVABLOX_API_ROOT,
   MORALIS_API_KEY: import.meta.env.VITE_MORALIS_API_KEY,
   INFURA_API_KEY: import.meta.env.VITE_INFURA_KEY,
+  NFTSCAN_API_KEY: import.meta.env.VITE_NFTSCAN_API_KEY,
+
 
   ENVIRONMENT: import.meta.env.MODE,
 };

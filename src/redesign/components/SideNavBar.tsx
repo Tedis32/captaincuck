@@ -1,22 +1,12 @@
-import NovabloxLogo from "/src/assets/images/logo.png";
+import SeagenLogo from "/src/assets/images/seagenlogo.jpg";
 
 import {
   faHouse,
-  faBoxOpen,
-  faWallet,
-  faDharmachakra,
-  faColonSign,
-  faMaximize,
-  faClockRotateLeft,
-  faMoneyBill,
-  faMoneyBill1Wave,
 } from "@fortawesome/free-solid-svg-icons";
 import { faDollar } from "@fortawesome/free-solid-svg-icons";
 import {
   faTelegramPlane,
   faTwitter,
-  faDiscord,
-  faMediumM,
   faMedium,
 } from "@fortawesome/free-brands-svg-icons";
 import NavItem from "./SideBarNav/NavItem";
@@ -50,11 +40,11 @@ export default function SidebarNav() {
   return (
     <div className="z-40">
       <nav
-        className={`${expandedClass} ${navbarAnimationDuration} ${maxNavWidth} z-[2] overflow-hidden transition-width h-full fixed flex flex-col justify-between bg-darkerGray text-center border-r-2 border-mediumGray`}
+        className={`${expandedClass} ${navbarAnimationDuration} ${maxNavWidth} z-[2] overflow-hidden transition-width h-full fixed flex flex-col justify-between bg-navbarNavy text-center border-r-2 border-mediumGray`}
       >
         <br />
 
-        <img src={NovabloxLogo} className="object-cover w-18 h-18 " />
+        <img src={SeagenLogo} className="object-cover w-18 h-18 " />
         <div
           className="flex flex-row w-full items-center cursor-pointer relative"
           onClick={() => {

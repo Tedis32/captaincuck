@@ -1,3 +1,5 @@
+import { Collection } from "nftscan-api/dist/src/types/evm";
+
 export type TrendingNFTData = {
   rank: number;
   collection_title: string;
@@ -45,3 +47,8 @@ export type NFTScanNFTData = {
   sales_total?: number | string;
   average_price?: number | string;
 };
+
+export interface UnifiedCollection extends Collection {
+  sales_total: string | number;
+  average_price: string | number;
+}
